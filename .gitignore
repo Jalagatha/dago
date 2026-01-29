@@ -1,7 +1,13 @@
-# Environment
+# Environment & Secrets
 .env
-.env.local
-.env.production
+.env.*
+*.env
+.envrc
+secrets/
+*.pem
+*.key
+credentials.json
+service-account*.json
 
 # Python
 __pycache__/
@@ -10,17 +16,41 @@ __pycache__/
 *.so
 .Python
 venv/
+env/
 ENV/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
 
 # IDE
 .idea/
 .vscode/
 *.swp
 *.swo
+*.sublime-*
+.project
+.pydevproject
 
 # Database
 *.db
 *.sqlite3
+*.sql
 
 # Logs
 *.log
+logs/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build
+dist/
+build/
+*.egg-info/
+
+# Testing
+.coverage
+htmlcov/
+.pytest_cache/
+.tox/

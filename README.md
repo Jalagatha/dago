@@ -55,7 +55,8 @@ food_delivery_backend/
 ├── alembic/                   # Database migrations
 ├── main.py                    # Application entry point
 ├── requirements.txt           # Python dependencies
-└── .env                       # Environment variables
+├── Procfile                   # Deployment command
+└── railway.toml               # Railway deployment config
 ```
 
 ## Setup Instructions
@@ -81,13 +82,16 @@ pip install -r requirements.txt
 
 ### 4. Configure Environment Variables
 
-Update the [.env](.env) file with your configuration:
+Create a `.env` file (never commit this file):
 
 ```env
-DATABASE_URL=postgresql://postgres:your_password@localhost:5432/food_delivery_db
-SECRET_KEY=your-secret-key-here  # Generate with: openssl rand -hex 32
-DEBUG=True
+DATABASE_URL=postgresql://user:password@host:5432/dbname
+SECRET_KEY=generate-with-openssl-rand-hex-32
+DEBUG=false
+CORS_ORIGINS=*
 ```
+
+> **Note**: Generate a secure SECRET_KEY with: `openssl rand -hex 32`
 
 ### 5. Create Database
 
